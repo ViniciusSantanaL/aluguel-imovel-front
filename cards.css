@@ -5,7 +5,7 @@
 .cards-content {
     padding: 3rem;
     display: flex;
-    width: 1100px;
+    width: min(100%, 1100px);
     margin: 0 auto;
     flex-direction: column;
     align-items: center;
@@ -15,11 +15,9 @@
 .card-text  {
     text-align: center;
     color: #6D8884;
-    padding: 0 6rem;
 }
 
 .card-text h2 {
-    
     margin-bottom: 1rem;
     font-size: 2rem;
     color: darkgreen;
@@ -65,4 +63,25 @@
     height: 70px;
     border-radius: 20px;
     background: green;
+    transform: scale(0.6);
+}
+
+@media (max-width: 1100px) {
+    .tags-container {
+        flex-direction: column;
+        gap: 1.5em;
+        align-items: center;
+    }
+
+    .card-text h2 {
+        font-size: 1.5em;
+    }
+
+    .card-text p {
+        font-size: 1rem;
+    }
+
+    .card-icon {
+        margin-inline: auto;
+    }
 }
