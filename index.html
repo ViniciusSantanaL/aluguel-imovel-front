@@ -1,105 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+            rel="stylesheet"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./home.css" />
-    <link rel="stylesheet" href="./cards.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <script src="js/jquery-3.6.4.min.js" defer></script>
+    <script src="js/jquery-easing.1.4.1.min.js" defer></script>
+    <script src="js/scrollspy.js" defer></script>
+    <script src="js/main.js" defer></script>
 
     <title>Aluguel de Imovéis</title>
-  </head>
-  <body>
-    <header>
-      <div class="header-container">
+</head>
+<body>
+<header class="header_area">
+    <div class="header-container main_menu">
         <h1>Aluguei</h1>
-        <nav class="nav-container">
-          <a>Inicial</a>
-          <a>Principais</a>
-          <a>Alugar</a>
-          <button>Quero Alugar</button>
-        </nav>
-      </div>
-    </header>
-    <main>
-      <section class="home-container">
-        <div class="home-content">
-          <div class="home-text-container">
-            <h2>Invista com quem mais inova no setor imobiliário</h2>
-            <p>
-              Conheça o mais novo empreendimento da Empresa Lion e invista a
-              partir de R$ 500,00
-            </p>
+        <nav class="nav-container navbar navbar-expand-lg navbar-light">
+            <ul class="d-flex flex-row">
+                <li id="li-banner" style="padding-right: 1.5rem;">
+                  <a class="js-scroll-trigger" href="#banner">Inicial</a>
+                </li>
+                <li id="li-principal" style="padding-right: 1.5rem;">
+                  <a class="js-scroll-trigger" href="#principal">Principais</a>
+                </li>
+                <li style="padding-right: 1.5rem;"><a class="js-scroll-trigger" href="#alugar">Alugar</a></li>
+                <li style="padding-right: 1.5rem;"><a class="js-scroll-trigger" href="#contato">Contato</a></li>
+            </ul>
             <button>Quero Alugar</button>
-          </div>
-          <div class="home-image-container">
-            <img src="assets/home.jpg" />
-          </div>
+        </nav>
+    </div>
+</header>
+<main>
+    <section class="home-container" id="banner" data-spy>
+        <div class="home-content">
+            <div class="home-text-container">
+                <h2>Invista com quem mais inova no setor imobiliário</h2>
+                <p>
+                    Conheça o mais novo empreendimento da Empresa Lion e invista a
+                    partir de R$ 500,00
+                </p>
+                <button>Quero Alugar</button>
+            </div>
+            <div class="home-image-container">
+                <img src="assets/home.jpg" alt=""/>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <section class="cards-container">
+    <section class="cards-container" id="principal" data-spy>
         <div class="cards-content">
-          <article class="card-text">
-            <h2>Investir em imoveis pode ser simples.</h2>
-            <p>
-              A Aluguei conecta você as melhores oportunidades de investimento
-              de renda residencial. Não importa se você já investe no setor
-              imobiliário ou se quer começar agora.
-            </p>
-          </article>
-          <div class="tags-container">
-            <div class="card-tag">
-              <div class="card-icon">
-                <img src="assets/sun-icon.png" />
-              </div>
-              <h3>Investimento seguro e lucrativo</h3>
-              <p>
-                Labore nostrud sit reprehenderit officia. Dolore velit in dolor
-                dolor laboris aliqua amet Lorem laboris. Labore exercitation
-                mollit enim id aliquip eiusmod ad voluptate deserunt ad.
-              </p>
-            </div>
+            <article class="card-text">
+                <h2>Investir em imoveis pode ser simples.</h2>
+                <p>
+                    A Aluguei conecta você as melhores oportunidades de investimento
+                    de renda residencial. Não importa se você já investe no setor
+                    imobiliário ou se quer começar agora.
+                </p>
+            </article>
+            <div class="tags-container">
+                <div class="card-tag">
+                    <div class="card-icon">
+                        <img src="assets/sun-icon.png"/>
+                    </div>
+                    <h3>Investimento seguro e lucrativo</h3>
+                    <p>
+                        Labore nostrud sit reprehenderit officia. Dolore velit in dolor
+                        dolor laboris aliqua amet Lorem laboris. Labore exercitation
+                        mollit enim id aliquip eiusmod ad voluptate deserunt ad.
+                    </p>
+                </div>
 
-            <div class="card-tag">
-              <div class="card-icon">
-                <img src="assets/lock-icon.png" />
-              </div>
-              <h3>Estabilidade e liquidez</h3>
-              <p>
-                Labore nostrud sit reprehenderit officia. Dolore velit in dolor
-                dolor laboris aliqua amet Lorem laboris. Labore exercitation
-                mollit enim id aliquip eiusmod ad voluptate deserunt ad.
-              </p>
-            </div>
+                <div class="card-tag">
+                    <div class="card-icon">
+                        <img src="assets/lock-icon.png"/>
+                    </div>
+                    <h3>Estabilidade e liquidez</h3>
+                    <p>
+                        Labore nostrud sit reprehenderit officia. Dolore velit in dolor
+                        dolor laboris aliqua amet Lorem laboris. Labore exercitation
+                        mollit enim id aliquip eiusmod ad voluptate deserunt ad.
+                    </p>
+                </div>
 
-            <div class="card-tag">
-              <div class="card-icon">
-                <img src="assets/home-icon.png" />
-              </div>
-              <h3>Excelente retorno financeiro</h3>
-              <p>
-                Labore nostrud sit reprehenderit officia. Dolore velit in dolor
-                dolor laboris aliqua amet Lorem laboris. Labore exercitation
-                mollit enim id aliquip eiusmod ad voluptate deserunt ad.
-              </p>
+                <div class="card-tag">
+                    <div class="card-icon">
+                        <img src="assets/home-icon.png" alt=""/>
+                    </div>
+                    <h3>Excelente retorno financeiro</h3>
+                    <p>
+                        Labore nostrud sit reprehenderit officia. Dolore velit in dolor
+                        dolor laboris aliqua amet Lorem laboris. Labore exercitation
+                        mollit enim id aliquip eiusmod ad voluptate deserunt ad.
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <footer>
+    <section class="cards-container" id="alugar" data-spy>
+        <div class="cards-content">
+            <article class="card-text">
+                <h2>Faz suas reservas</h2>
+                <p>
+                    A Aluguei conecta você as melhores oportunidades de investimento
+                    de renda residencial. Não importa se você já investe no setor
+                    imobiliário ou se quer começar agora.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section class="cards-container pb-5" id="contato" data-spy>
+        <div class="cards-content">
+            <article class="card-text">
+                <h2>Entrar em contato conosco</h2>
+                <p>
+                    A Aluguei conecta você as melhores oportunidades de investimento
+                    de renda residencial. Não importa se você já investe no setor
+                    imobiliário ou se quer começar agora.
+                </p>
+            </article>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 pb-5">
+                    <div class="contact_info">
+                        <div class="info_item">
+                            <i class="lnr lnr-home"></i>
+                            <h6>Brasilia, Asa Sul</h6>
+                            <p>Rua Santa monica</p>
+                        </div>
+                        <div class="info_item">
+                            <i class="lnr lnr-phone-handset"></i>
+                            <h6><a href="#">(61) 9 9999-9999</a></h6>
+                            <p>Segunda de 09h00 até Sexta as 18H00 </p>
+                        </div>
+                        <div class="info_item">
+                            <i class="lnr lnr-envelope"></i>
+                            <h6><a href="#">suporte@alugei.com.br</a></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <form class="row contact_form" action="" method="post" id="contactForm">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" name="name" required
+                                       placeholder="Nome completo">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" name="email" required
+                                       placeholder="E-mail">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="subject" name="subject" required
+                                       placeholder="Assunto">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" id="message" rows="1" required
+                                          placeholder="Conteudo"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-right">
+                            <button type="submit" value="submit" class="primary_btn">
+                                <span>Enviar</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards-container" id="" data-spy>
+    </section>
+
+    <footer>
         <div>
-          <p>Footer</p>
+            <p>Footer</p>
         </div>
-      </footer>
-    </main>
-  </body>
+    </footer>
+</main>
+</body>
 </html>

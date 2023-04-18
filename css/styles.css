@@ -63,3 +63,8 @@ footer {
     height: 100px;
     background-color: #fff;
 }
+
+.header-container .navbar-collapse {
+    max-height: 340px;
+    overflow-y: scroll;
+}
