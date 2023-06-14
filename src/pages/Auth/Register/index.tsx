@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -6,7 +6,9 @@ import * as Yup from 'yup'
 
 import { useTitle } from '../../../hooks'
 import { TextInput } from '../../../components'
-import { RegisterType } from '../../../types'
+import { ApiErrorType, RegisterType } from '../../../types'
+import { AuthContext } from '../../../context'
+import { toast } from 'react-toastify'
 
 const VALID_PASSWORD = new RegExp('^.*(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$&*+=%]).{8,25}.*$')
 
@@ -22,12 +24,11 @@ export function Register() {
     useTitle('Register | Aluguel')
     const navigate = useNavigate()
     const [hasLoggingError, setHasLoggingError] = useState<boolean | string>(false)
-    // const { handleRegister } = useContext(AuthContext)
+    const { handleRegister } = useContext(AuthContext)
 
     const {
         register,
         handleSubmit,
-        setError,
         formState: { isSubmitting, errors, isValid }
     } = useForm<RegisterType>({
         mode: 'onTouched',
@@ -35,13 +36,17 @@ export function Register() {
     })
 
     const onSubmit = async (registerType: RegisterType) => {
-        // const result = (await handleRegister(registerType, loginUrl)) as ApiErrorType | boolean
-        // if (typeof result === 'object') {
-        //     const { message } = result
-        //     setHasLoggingError(message)
-        // }
-        //
-        // typeof result === 'boolean' && navigate('/auth/registered-successfully')
+        const result = (await handleRegister(registerType)) as ApiErrorType | boolean
+
+        if (typeof result === 'object') {
+            setHasLoggingError(result.error)
+            toast.error(result.error)
+
+            return
+        }
+
+        toast.success('User successfully created.')
+        navigate('/')
     }
 
     return (
@@ -107,8 +112,7 @@ export function Register() {
                 <div className="row mt-3">
                     <div className="col-12">
                         <button type="submit" disabled={isSubmitting} className="btn btn-primary btn-block mt-3">
-                            {isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
-                            Register
+                            {isSubmitting ? <span className="spinner-border spinner-border-sm mr-1"></span> : 'Register'}
                         </button>
                     </div>
                 </div>

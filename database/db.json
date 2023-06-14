@@ -1,22 +1,12 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "johndoe",
-      "email": "johndoe@example.com.br",
-      "password": "123456789",
-      "firstName": "John",
-      "lastName": "Doe"
-    },
-    {
-      "email": "johndoe1@example.com.br",
-      "password": "$2a$10$DCHnazsggUiZRRjxN52pj.6ff/ZB1kWhXTqFFCADOCSuALlA6Z.L2",
-      "id": 2
-    },
-    {
-      "email": "johndoe2@example.com.br",
-      "password": "$2a$10$3zTWg1Obd2VjfCOKkWjIke1xJCr3r7GXSfGxGWY002ZhUm.g9iDSW",
-      "id": 3
+      "email": "rafiou@domain.com.br",
+      "password": "$2a$10$CJoaQCOa/qbxsuGIUxdr3OxVlgWni0S3WHuOjX38LaA7tHFy70E8O",
+      "username": "rafiou",
+      "firstName": "Rafiou",
+      "lastName": "Sitou",
+      "id": 1
     }
   ]
 }

@@ -1,3 +1,5 @@
+import { ApiErrorType } from './ApiErrorType.ts'
+
 export type UserType = {
     id: number
     username: string
@@ -7,8 +9,8 @@ export type UserType = {
 }
 
 export type UserLoggedType = {
-    accessToken: string
-    user: UserType
+    accessToken: string | null
+    user: UserType | null
 }
 
 export type UserCreatedType = UserLoggedType
@@ -19,9 +21,18 @@ export type LoginType = {
 }
 
 export type RegisterType = {
-    username: string
+    username: string | null
     email: string
     password: string
-    firstName: string
-    lastName: string
+    firstName: string | null
+    lastName: string | null
+}
+
+export type AuthContextType = {
+    isAuthenticated: boolean
+    isLoading: boolean
+    user: UserLoggedType | null
+    handleLogin: (loginType: LoginType) => Promise<ApiErrorType | boolean>
+    handleRegister: (registerType: RegisterType) => Promise<ApiErrorType | boolean>
+    handleLogout: () => void
 }

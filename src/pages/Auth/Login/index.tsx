@@ -1,15 +1,17 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 
 import { useTitle } from '../../../hooks'
 import { TextInput } from '../../../components'
-import { LoginType } from '../../../types'
+import { ApiErrorType, LoginType } from '../../../types'
+import { AuthContext } from '../../../context'
 
 const loginSchema = Yup.object({
-    email: Yup.string().trim().min(6).required(),
+    email: Yup.string().email().trim().min(6).required(),
     password: Yup.string().min(6).required()
 }).required()
 
@@ -18,7 +20,7 @@ export function Login() {
 
     const navigate = useNavigate()
     const [hasLoggingError, setHasLoggingError] = useState<boolean | string>(false)
-    // const { handleLogin } = useContext(AuthContext)
+    const { handleLogin } = useContext(AuthContext)
 
     const {
         register,
@@ -30,14 +32,17 @@ export function Login() {
     })
 
     const onSubmit = async ({ email, password }: LoginType) => {
-        // const result = (await handleLogin(email, password)) as ApiErrorType | boolean
-        //
-        // if (typeof result === 'object') {
-        //     const { message } = result
-        //     setHasLoggingError(message)
-        // }
-        //
-        // typeof result === 'boolean' && navigate('/')
+        const result = (await handleLogin({ email, password })) as ApiErrorType | boolean
+
+        if (typeof result === 'object') {
+            setHasLoggingError(result.error)
+            toast.error(result.error)
+
+            return
+        }
+
+        toast.success('User successfully logged.')
+        navigate('/')
     }
 
     return (
@@ -62,7 +67,7 @@ export function Login() {
                 <div className="input-group mb-3">
                     <TextInput
                         name={'email'}
-                        type={'text'}
+                        type={'email'}
                         placeholder={'Email or Username'}
                         icon={'fas fa-envelope'}
                         register={register}
@@ -86,8 +91,7 @@ export function Login() {
                 <div className="row mt-3">
                     <div className="col-12">
                         <button type="submit" disabled={isSubmitting} className="btn btn-primary btn-block mt-3">
-                            {isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
-                            Sign In
+                            {isSubmitting ? <span className="spinner-border spinner-border-sm mr-1"></span> : 'Sign In'}
                         </button>
                     </div>
                 </div>
