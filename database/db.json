@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "email": "rafiou@domain.com.br",
+      "password": "$2a$10$CJoaQCOa/qbxsuGIUxdr3OxVlgWni0S3WHuOjX38LaA7tHFy70E8O",
+      "username": "rafiou",
+      "firstName": "Rafiou",
+      "lastName": "Sitou",
+      "id": 1
+    }
+  ]
+}
