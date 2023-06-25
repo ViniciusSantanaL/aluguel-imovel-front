@@ -1,9 +1,20 @@
-import styles from "./styles.module.scss";
+import { Header } from './Header'
+import { Presentation } from './Presentation'
+import { Cards } from './Card'
 
 export function Home() {
-  return (
-    <div>
-      <h1>Hello World !</h1>
-    </div>
-  );
+    return (
+        <>
+            <Header />
+            <main>
+                <Presentation />
+                <Cards />
+                <footer>
+                    <div>
+                        <p>Footer</p>
+                    </div>
+                </footer>
+            </main>
+        </>
+    )
 }

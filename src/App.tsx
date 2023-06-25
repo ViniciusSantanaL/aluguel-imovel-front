@@ -1,5 +1,4 @@
 import { ToastContainer } from 'react-toastify'
-
 import { AppRoutes } from './routes'
 import { AuthProvider } from './Providers'
 
