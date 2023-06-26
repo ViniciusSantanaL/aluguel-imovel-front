@@ -10,7 +10,7 @@ interface TableControlProps {
     onNext: () => void
 }
 
-export function TableControl({ numbers, currentPage, firstIndex, lastIndex, onPrevious, handleCurrentPage, onNext }: TableControlProps) {
+export function TableControl({ numbers, currentPage, firstIndex, onPrevious, handleCurrentPage, onNext }: TableControlProps) {
     return (
         <div className={styles['table-control-container']}>
             {currentPage !== firstIndex + 1 && <button onClick={onPrevious}>Anterior</button>}
