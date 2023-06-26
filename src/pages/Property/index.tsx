@@ -41,6 +41,9 @@ export function Property() {
     return (
         <>
             <Header />
+            <div style={{ width: '1100px', display: 'flex', margin: '0 auto', marginTop: '1rem' }}>
+                <h2 style={{ color: 'black' }}>Home {'>'} Imóveis</h2>
+            </div>
             <main className={styles['property-container']}>
                 <div>
                     <h1>Busque um Imóvel</h1>
@@ -62,7 +65,7 @@ export function Property() {
                     <tbody>
                         {data.map((property) => (
                             <tr>
-                                <PropertyCard key={property.id} {...property} />
+                                <PropertyCard key={property.id} property={property} />
                             </tr>
                         ))}
                     </tbody>

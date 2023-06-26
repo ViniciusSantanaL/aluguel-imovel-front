@@ -6,6 +6,7 @@ import { Login, Register } from './pages/Auth'
 import { FC, useContext } from 'react'
 import { AuthContext } from './context'
 import { Property } from './pages/Property'
+import { Payment } from './pages/Payment'
 
 const PrivateOutlet: FC = ({ children }: any) => {
     const { isAuthenticated } = useContext(AuthContext)
@@ -41,6 +42,7 @@ export const AppRoutes = () => {
 
                 <Route element={<PublicOutlet />}>
                     <Route Component={Home} path="/" />
+                    <Route path="/pagamento" element={<Payment />} />
                     <Route path={'/imoveis'} element={<Property />} />
                     <Route path={'auth'} element={<AuthLayout />}>
                         <Route path="login" element={<Login />} />

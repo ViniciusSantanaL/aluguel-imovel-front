@@ -1,33 +1,29 @@
+import { Link } from 'react-router-dom'
+import { Property } from '../../../types/Property.type'
 import styles from './styles.module.scss'
 
 interface PropertyCardProps {
-    id: number
-    imageUrl: string
-    price: number
-    locale: string
-    title: string
-    description: string
-    assessment: number
+    property: Property
 }
-export function PropertyCard({ id, imageUrl, price, locale, title, description, assessment }: PropertyCardProps) {
+export function PropertyCard({ property }: PropertyCardProps) {
     return (
         <div className={styles['card-container']}>
-            <img src={imageUrl} />
+            <img src={property.imageUrl} />
             <div className={styles['card-content']}>
                 <div className={styles['card-title']}>
                     <span>
-                        <strong>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(price)}</strong>
+                        <strong>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(property.price)}</strong>
                     </span>
                     <span>|</span>
                     <span>
-                        <strong>{locale}</strong>
+                        <strong>{property.locale}</strong>
                     </span>
                 </div>
-                <h3>{title}</h3>
-                <p>{description}</p>
+                <h3>{property.title}</h3>
+                <p>{property.description}</p>
                 <div className={styles['card-contact']}>
                     <div>
-                        <strong>{assessment}</strong>
+                        <strong>{property.assessment}</strong>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 32 32"
@@ -45,7 +41,9 @@ export function PropertyCard({ id, imageUrl, price, locale, title, description, 
                     <strong>|</strong>
                     <strong>Favoritar</strong>
                     <strong>Contato</strong>
-                    <button>Alugar</button>
+                    <Link to={`/pagamento?imovelId=${property.id}`}>
+                        <button>Alugar</button>
+                    </Link>
                 </div>
             </div>
         </div>

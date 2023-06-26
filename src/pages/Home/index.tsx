@@ -11,11 +11,7 @@ export function Home() {
                 <Presentation />
                 <Cards />
                 <Contact />
-                <footer>
-                    <div>
-                        <p>Footer</p>
-                    </div>
-                </footer>
+                <footer></footer>
             </main>
         </>
     )

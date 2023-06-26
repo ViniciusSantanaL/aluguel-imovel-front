@@ -1,0 +1,31 @@
+.property-details-container {
+    display: flex;
+    height: 650px;
+    flex-direction: column;
+    align-content: center;
+    width: 50%;
+
+    border-color: black;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-radius: 5px 0px 0px 5px;
+    border-radius: 5px 0px 0px 5px;
+
+    img {
+        width: 548px;
+    }
+
+    .property-content {
+        display: flex;
+        text-align: left;
+        gap: 0.5rem;
+        flex-direction: column;
+        padding: 1rem;
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+    }
+}
