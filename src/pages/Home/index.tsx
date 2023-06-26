@@ -1,6 +1,7 @@
-import { Header } from './Header'
+import { Header } from '../../components/Header'
 import { Presentation } from './Presentation'
 import { Cards } from './Card'
+import { Contact } from './Contact'
 
 export function Home() {
     return (
@@ -9,6 +10,7 @@ export function Home() {
             <main>
                 <Presentation />
                 <Cards />
+                <Contact />
                 <footer>
                     <div>
                         <p>Footer</p>

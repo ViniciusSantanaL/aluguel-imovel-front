@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "imageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-22319550/original/cc1fd71d-1a91-4026-99f8-c2cbffefd68f.jpeg?im_w=720",
+        "price": 560000.3,
+        "locale": "Paraty, Brasil",
+        "title": "Casa de design em floresta tropical com cachoeira privativa",
+        "description": "Lindíssimo apartamento 3 quartos Shces 305 Cruzeiro novo, vazado, nascente, 1° andar, text oiii. Caradaindíssimo apartamento 3 quartos Shces 305 Cruzeiro novo, vazado, nascente, 1° andar!!",
+        "assessment": 4.5
+    },
+    {
+        "id": 2,
+        "imageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-49840035/original/e7496a4a-3cac-444f-8858-15bff633bd42.jpeg?im_w=720",
+        "price": 780000,
+        "locale": "Rio de Janeiro, Brasil",
+        "title": "Apartamento com vista deslumbrante para o mar de Copacabana",
+        "description": "Aproveite o sol, a praia e a vida noturna agitada do Rio de Janeiro neste lindo apartamento.",
+        "assessment": 4.8
+    },
+    {
+        "id": 3,
+        "imageUrl": "https://a0.muscache.com/im/pictures/362aad20-ad08-4985-94df-9766f81ea140.jpg?im_w=720",
+        "price": 350000,
+        "locale": "São Paulo, Brasil",
+        "title": "Cobertura luxuosa no coração de São Paulo",
+        "description": "Uma cobertura espaçosa e elegante com vista panorâmica da cidade.",
+        "assessment": 4.7
+    },
+    {
+        "id": 4,
+        "imageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-40255944/original/8939e0fe-fe3d-4404-bdab-4de69c678ed3.jpeg?im_w=720",
+        "price": 410000,
+        "locale": "Florianópolis, Brasil",
+        "title": "Casa aconchegante perto da praia",
+        "description": "Aproveite a tranquilidade e as belas praias de Florianópolis nesta casa aconchegante.",
+        "assessment": 4.3
+    },
+    {
+        "id": 5,
+        "imageUrl": "https://a0.muscache.com/im/pictures/8d3565bc-b9da-4931-81c1-58376b35b682.jpg?im_w=720",
+        "price": 950000,
+        "locale": "Belo Horizonte, Brasil",
+        "title": "Casa de luxo em condomínio fechado",
+        "description": "Desfrute do conforto e da privacidade nesta casa de alto padrão em Belo Horizonte.",
+        "assessment": 4.6
+    },
+    {
+        "id": 6,
+        "imageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-845959517006491026/original/4ed1f93a-6c41-465d-aff8-d6413af538f5.jpeg?im_w=720",
+        "price": 1200000,
+        "locale": "Recife, Brasil",
+        "title": "Penthouse de luxo com vista para o mar",
+        "description": "Uma penthouse sofisticada com uma vista deslumbrante do oceano em Recife.",
+        "assessment": 4.9
+    },
+    {
+        "id": 7,
+        "imageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-16613798/original/cceb7c52-2209-4e17-a359-5724593b084d.jpeg?im_w=720",
+        "price": 680000,
+        "locale": "Fortaleza, Brasil",
+        "title": "Apartamento à beira-mar em Iracema",
+        "description": "Aproveite as belas praias de Fortaleza neste confortável apartamento à beira-mar.",
+        "assessment": 4.4
+    },
+    {
+        "id": 8,
+        "imageUrl": "https://a0.muscache.com/im/pictures/c079c9ba-a22a-40d8-9f20-68335710055d.jpg?im_w=720",
+        "price": 540000,
+        "locale": "Natal, Brasil",
+        "title": "Casa de praia com piscina privativa",
+        "description": "Relaxe e aproveite o sol nesta encantadora casa de praia em Natal.",
+        "assessment": 4.7
+    },
+    {
+        "id": 9,
+        "imageUrl": "https://a0.muscache.com/im/pictures/a5ff30bc-73cd-4f41-9f55-7f401eb1fbe6.jpg?im_w=720",
+        "price": 380000,
+        "locale": "Curitiba, Brasil",
+        "title": "Apartamento espaçoso e moderno no centro da cidade",
+        "description": "Explore Curitiba a partir deste elegante apartamento localizado no coração da cidade.",
+        "assessment": 4.6
+    },
+    {
+        "id": 10,
+        "imageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-36353469/original/4740dd49-47ba-4759-94a4-93f28ca69d33.jpeg?im_w=720",
+        "price": 690000,
+        "locale": "Salvador, Brasil",
+        "title": "Casa colonial em Pelourinho",
+        "description": "Viva a história de Salvador nesta casa colonial localizada no famoso bairro de Pelourinho.",
+        "assessment": 4.5
+    },
+    {
+        "id": 11,
+        "imageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-43293445/original/142d0380-c56b-4529-95c3-f7918a83a19f.jpeg?im_w=720",
+        "price": 720000,
+        "locale": "Paris, França",
+        "title": "Apartamento elegante próximo à Torre Eiffel",
+        "description": "Desfrute de Paris neste apartamento elegante e bem localizado, a poucos passos da Torre Eiffel.",
+        "assessment": 4.9
+    },
+    {
+        "id": 12,
+        "imageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-829065671065677643/original/530d66a9-bb26-44a3-9106-2193cb9784c9.jpeg?im_w=720",
+        "price": 650000,
+        "locale": "Barcelona, Espanha",
+        "title": "Casa moderna no centro de Barcelona",
+        "description": "Uma casa contemporânea e espaçosa no coração de Barcelona, perfeita para explorar a cidade.",
+        "assessment": 4.7
+    },
+    {
+        "id": 13,
+        "imageUrl": "https://a0.muscache.com/im/pictures/5b68a38a-cea1-468a-9b24-57c1fe6d0bfe.jpg?im_w=720",
+        "price": 530000,
+        "locale": "Roma, Itália",
+        "title": "Apartamento charmoso perto do Coliseu",
+        "description": "Aproveite Roma neste apartamento encantador e bem localizado, próximo ao icônico Coliseu.",
+        "assessment": 4.6
+    },
+    {
+        "id": 14,
+        "imageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-598628746137539798/original/877cffce-4a1f-4926-8436-dd7fddf5ca1c.jpeg?im_w=720",
+        "price": 470000,
+        "locale": "Lisboa, Portugal",
+        "title": "Casa tradicional no bairro histórico de Alfama",
+        "description": "Experimente a autêntica vida de Lisboa nesta casa tradicional localizada no charmoso bairro de Alfama.",
+        "assessment": 4.4
+    },
+    {
+        "id": 15,
+        "imageUrl": "https://a0.muscache.com/im/pictures/16459afe-21f2-4528-a732-2fedec9f9b0f.jpg?im_w=720",
+        "price": 590000,
+        "locale": "Amsterdam, Holanda",
+        "title": "Canal house elegante no centro de Amsterdam",
+        "description": "Desfrute de uma autêntica experiência holandesa nesta elegante casa localizada às margens dos famosos canais de Amsterdam.",
+        "assessment": 4.5
+    },
+    {
+        "id": 16,
+        "imageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-53540620/original/046da338-7a28-4ccb-8909-29c870943cec.jpeg?im_w=720",
+        "price": 790000,
+        "locale": "Berlim, Alemanha",
+        "title": "Apartamento moderno no coração de Berlim",
+        "description": "Explore a animada cidade de Berlim a partir deste apartamento moderno e bem localizado.",
+        "assessment": 4.8
+    },
+    {
+        "id": 17,
+        "imageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-48938168/original/d1b99359-5521-48d7-9c03-2a18f6955ef3.jpeg?im_w=720",
+        "price": 610000,
+        "locale": "Londres, Reino Unido",
+        "title": "Townhouse encantadora em Notting Hill",
+        "description": "Viva como um londrino neste encantador townhouse localizado no famoso bairro de Notting Hill.",
+        "assessment": 4.7
+    },
+    {
+        "id": 18,
+        "imageUrl": "https://a0.muscache.com/im/pictures/10c4d5f6-3fe8-46e4-a785-33db099ac50c.jpg?im_w=720",
+        "price": 490000,
+        "locale": "Nova York, Estados Unidos",
+        "title": "Loft moderno no centro de Manhattan",
+        "description": "Experimente a vida na cidade grande neste moderno loft localizado no coração de Manhattan.",
+        "assessment": 4.5
+    },
+    {
+        "id": 19,
+        "imageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-44339404/original/2a61fcf2-4bab-47df-b08c-204fa19249f6.jpeg?im_w=720",
+        "price": 450000,
+        "locale": "Sydney, Austrália",
+        "title": "Apartamento à beira-mar em Bondi Beach",
+        "description": "Desfrute de vistas deslumbrantes do oceano neste apartamento à beira-mar em uma das praias mais famosas de Sydney.",
+        "assessment": 4.4
+    },
+    {
+        "id": 20,
+        "imageUrl": "https://a0.muscache.com/im/pictures/3723219a-eb01-4733-b978-1266270116cb.jpg?im_w=720",
+        "price": 570000,
+        "locale": "Tóquio, Japão",
+        "title": "Apartamento tradicional no bairro de Shinjuku",
+        "description": "Experimente a cultura japonesa neste apartamento tradicional localizado no animado bairro de Shinjuku.",
+        "assessment": 4.6
+    }
+]

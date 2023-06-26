@@ -5,6 +5,7 @@ import { PageNotFound } from './pages/Errors'
 import { Login, Register } from './pages/Auth'
 import { FC, useContext } from 'react'
 import { AuthContext } from './context'
+import { Property } from './pages/Property'
 
 const PrivateOutlet: FC = ({ children }: any) => {
     const { isAuthenticated } = useContext(AuthContext)
@@ -36,12 +37,11 @@ export const AppRoutes = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route element={<PrivateOutlet />}>
-                    <Route path={'/imoveis'} element={<h1>Hello World!</h1>} />
-                </Route>
+                <Route element={<PrivateOutlet />}></Route>
 
                 <Route element={<PublicOutlet />}>
                     <Route Component={Home} path="/" />
+                    <Route path={'/imoveis'} element={<Property />} />
                     <Route path={'auth'} element={<AuthLayout />}>
                         <Route path="login" element={<Login />} />
                         <Route path="register" element={<Register />} />

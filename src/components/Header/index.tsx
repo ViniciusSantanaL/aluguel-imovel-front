@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './styles.module.scss'
 
 export function Header() {
@@ -8,8 +9,10 @@ export function Header() {
                 <nav className={styles['nav-container']}>
                     <a>Inicial</a>
                     <a>Principais</a>
-                    <a>Alugar</a>
-                    <button>Quero Alugar</button>
+                    <a>Contato</a>
+                    <Link to="/imoveis">
+                        <button>Quero Alugar</button>
+                    </Link>
                 </nav>
             </div>
         </header>

@@ -1,0 +1,26 @@
+.table-control-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    button {
+        padding: 0 1rem;
+        background-color: transparent;
+        color: #2c9068;
+        border: 1px solid #2c9068;
+        &:hover {
+            filter: brightness(0.5);
+        }
+    }
+
+    p {
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+            filter: brightness(0.5);
+        }
+    }
+
+    .active {
+        color: #2c9068;
+    }
+}
