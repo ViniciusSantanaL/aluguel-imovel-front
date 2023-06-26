@@ -31,8 +31,8 @@ export function Register() {
         handleSubmit,
         formState: { isSubmitting, errors, isValid }
     } = useForm<RegisterType>({
-        mode: 'onTouched',
-        resolver: yupResolver(registerSchema)
+        mode: 'onTouched'
+        // resolver: yupResolver(registerSchema)
     })
 
     const onSubmit = async (registerType: RegisterType) => {
