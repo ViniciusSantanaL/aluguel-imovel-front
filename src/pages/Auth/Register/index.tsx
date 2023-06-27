@@ -1,6 +1,8 @@
 import { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as Yup from 'yup'
 
 import { useTitle } from '../../../hooks'
 import { TextInput } from '../../../components'
@@ -8,18 +10,18 @@ import { ApiErrorType, RegisterType } from '../../../types'
 import { AuthContext } from '../../../context'
 import { toast } from 'react-toastify'
 
-// const VALID_PASSWORD = new RegExp('^.*(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$&*+=%]).{8,25}.*$')
+const VALID_PASSWORD = new RegExp('^.*(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$&*+=%]).{8,25}.*$')
 
-// const registerSchema = Yup.object({
-//     username: Yup.string().trim().min(6).required(),
-//     email: Yup.string().email().trim().required(),
-//     password: Yup.string().min(8).matches(VALID_PASSWORD, 'The password must contain at least one lower case, one upper case, one number and one special character').required(),
-//     firstName: Yup.string().min(3).required(),
-//     lastName: Yup.string().min(3).required()
-// }).required()
+const registerSchema = Yup.object({
+    username: Yup.string().trim().min(6).required(),
+    email: Yup.string().email().trim().required(),
+    password: Yup.string().min(8).matches(VALID_PASSWORD, 'The password must contain at least one lower case, one upper case, one number and one special character').required(),
+    firstName: Yup.string().min(3).required(),
+    lastName: Yup.string().min(3).required()
+}).required()
 
 export function Register() {
-    useTitle('Register | Aluguel')
+    useTitle('Register | Aluguei')
     const navigate = useNavigate()
     const [hasLoggingError, setHasLoggingError] = useState<boolean | string>(false)
     const { handleRegister } = useContext(AuthContext)
@@ -29,8 +31,8 @@ export function Register() {
         handleSubmit,
         formState: { isSubmitting, errors, isValid }
     } = useForm<RegisterType>({
-        mode: 'onTouched'
-        // resolver: yupResolver(registerSchema)
+        mode: 'onTouched',
+        resolver: yupResolver(registerSchema)
     })
 
     const onSubmit = async (registerType: RegisterType) => {

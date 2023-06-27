@@ -52,7 +52,7 @@ export function Property() {
                 <div className={styles['filter-container']}>
                     <p>37.056 Apartamentos à venda no Brasil</p>
                     <div>
-                        <input placeholder="Nome do Imóvel" onChange={(e) => setPropertyName(e.target.value)} />
+                        <input placeholder="Nome do Imóvel" className="form-control" onChange={(e) => setPropertyName(e.target.value)} />
                         <button onClick={() => setGreaterAssessment((oldValue) => !oldValue)} className={greaterAssessment ? styles.active : ''}>
                             + Relevancia
                         </button>
@@ -71,9 +71,6 @@ export function Property() {
                     </tbody>
                 </table>
                 <TableControl firstIndex={firstIndex} lastIndex={lastIndex} currentPage={currentPage} numbers={numbers} handleCurrentPage={handleCurrentPage} onNext={onNext} onPrevious={onPrevious} />
-                <footer>
-                    <div></div>
-                </footer>
             </main>
         </>
     )

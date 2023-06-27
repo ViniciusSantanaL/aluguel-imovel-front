@@ -46,6 +46,7 @@ export const AppRoutes = () => {
                     <Route path={'/pagamento-confirmado'} element={<PaymentConfirmed />} />
                     <Route path="/pagamento" element={<Payment />} />
                     <Route path={'/imoveis'} element={<Property />} />
+
                     <Route path={'auth'} element={<AuthLayout />}>
                         <Route path="login" element={<Login />} />
                         <Route path="register" element={<Register />} />

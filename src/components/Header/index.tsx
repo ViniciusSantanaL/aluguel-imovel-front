@@ -5,11 +5,15 @@ export function Header() {
     return (
         <header>
             <div className={styles['header-container']}>
-                <h1>Aluguei</h1>
+                <Link to={'/'}>
+                    <h1>Aluguei</h1>
+                </Link>
                 <nav className={styles['nav-container']}>
-                    <a>Inicial</a>
-                    <a>Principais</a>
-                    <a>Contato</a>
+                    <Link to={'/'}>Inicial</Link>
+                    {/*<Link to={'#presentation'}>Principais</Link>*/}
+                    {/*<Link to={'#contact'}>Contato</Link>*/}
+                    <Link to={'auth/login'}>Login</Link>
+                    <Link to={'auth/register'}>Register</Link>
                     <Link to="/imoveis">
                         <button>Quero Alugar</button>
                     </Link>

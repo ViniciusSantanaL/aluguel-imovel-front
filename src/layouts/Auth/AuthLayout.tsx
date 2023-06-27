@@ -9,7 +9,7 @@ export function AuthLayout() {
                 <div className="card card-outline card-primary">
                     <div className="card-header text-center">
                         <Link to={'/'} className="h1">
-                            <b>Aluguel</b>APP
+                            <b>Aluguei</b>APP
                         </Link>
                     </div>
                     <div className="card-body">

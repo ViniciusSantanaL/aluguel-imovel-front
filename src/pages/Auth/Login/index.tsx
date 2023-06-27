@@ -16,7 +16,7 @@ const loginSchema = Yup.object({
 }).required()
 
 export function Login() {
-    useTitle('Login | Aluguel')
+    useTitle('Login | Aluguei')
 
     const navigate = useNavigate()
     const [hasLoggingError, setHasLoggingError] = useState<boolean | string>(false)

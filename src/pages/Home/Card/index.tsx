@@ -6,7 +6,7 @@ import styles from './styles.module.scss'
 
 export function Cards() {
     return (
-        <section className={styles['cards-container']}>
+        <section className={styles['cards-container']} id="presentation">
             <div className={styles['cards-content']}>
                 <article className={styles['card-text']}>
                     <h2>Investir em imoveis pode ser simples.</h2>

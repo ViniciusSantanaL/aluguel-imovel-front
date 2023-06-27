@@ -14,7 +14,7 @@ export function Presentation() {
                     </Link>
                 </div>
                 <div className={styles['home-image-container']}>
-                    <img src={Home} />
+                    <img src={Home} alt={'#'} />
                 </div>
             </div>
         </section>

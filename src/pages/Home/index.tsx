@@ -11,7 +11,6 @@ export function Home() {
                 <Presentation />
                 <Cards />
                 <Contact />
-                <footer></footer>
             </main>
         </>
     )
