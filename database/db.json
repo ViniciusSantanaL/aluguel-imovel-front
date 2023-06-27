@@ -7,6 +7,14 @@
       "firstName": "Rafiou",
       "lastName": "Sitou",
       "id": 1
+    },
+    {
+      "email": "rafiou_1@domain.com.br",
+      "password": "$2a$10$NHdltv.3hOpzvEEHyq3.CO6F6VxC/0ZESQZroBWuI5gulx314cxkG",
+      "username": "rafiou_1",
+      "firstName": "Rafiou",
+      "lastName": "Sitou",
+      "id": 2
     }
   ]
 }

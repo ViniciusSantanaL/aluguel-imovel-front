@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from 'react-router-dom'
 import { Home } from './pages/Home'
-import { AuthLayout } from './layouts'
+import { AppLayout, AuthLayout } from './layouts'
 import { PageNotFound } from './pages/Errors'
 import { Login, Register } from './pages/Auth'
 import { FC, useContext } from 'react'
@@ -22,18 +22,20 @@ const PrivateOutlet: FC = ({ children }: any) => {
     )
 }
 
-const PublicOutlet: FC = ({ children }: any) => {
-    const { isAuthenticated } = useContext(AuthContext)
-
-    return !isAuthenticated ? (
-        <>
-            {children}
-            <Outlet />
-        </>
-    ) : (
-        <Navigate to={'/'} replace />
-    )
-}
+// const PublicOutlet: FC = ({ children }: any) => {
+//     const { isAuthenticated, user } = useContext(AuthContext)
+//
+//     console.log({ isAuthenticated, user })
+//
+//     return !isAuthenticated ? (
+//         <>
+//             {children}
+//             <Outlet />
+//         </>
+//     ) : (
+//         <Navigate to={'/'} replace />
+//     )
+// }
 
 export const AppRoutes = () => {
     return (
@@ -41,17 +43,18 @@ export const AppRoutes = () => {
             <Routes>
                 <Route element={<PrivateOutlet />}></Route>
 
-                <Route element={<PublicOutlet />}>
-                    <Route Component={Home} path="/" />
-                    <Route path={'/pagamento-confirmado'} element={<PaymentConfirmed />} />
-                    <Route path="/pagamento" element={<Payment />} />
-                    <Route path={'/imoveis'} element={<Property />} />
-
-                    <Route path={'auth'} element={<AuthLayout />}>
-                        <Route path="login" element={<Login />} />
-                        <Route path="register" element={<Register />} />
-                    </Route>
+                <Route path={'/'} element={<AppLayout />}>
+                    <Route index element={<Home />} />
+                    <Route path={'pagamento-confirmado'} element={<PaymentConfirmed />} />
+                    <Route path="pagamento" element={<Payment />} />
+                    <Route path={'imoveis'} element={<Property />} />
                 </Route>
+
+                <Route path={'auth'} element={<AuthLayout />}>
+                    <Route path="login" element={<Login />} />
+                    <Route path="register" element={<Register />} />
+                </Route>
+
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
         </BrowserRouter>
