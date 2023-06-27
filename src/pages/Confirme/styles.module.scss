@@ -1,0 +1,16 @@
+.payment-confirme-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    height: calc(100vh - 15rem - 1px);
+    width: 1100px;
+
+    color: black;
+    margin: 0 auto;
+
+    img {
+        width: 500px;
+    }
+}

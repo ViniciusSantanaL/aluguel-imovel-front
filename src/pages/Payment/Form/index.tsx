@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import styles from './styles.module.scss'
 
 export function PaymentForm() {
+    const [fromDate, setFromDate] = useState(new Date().toISOString().slice(0, -14))
     return (
         <form className={styles['payment-form-container']}>
             <h1>Informações de Pagamento</h1>
@@ -19,9 +21,9 @@ export function PaymentForm() {
             <input placeholder="Contato" />
             <div className={styles['date-input-container']}>
                 <label htmlFor="fromDate">Data Inicio </label>
-                <input type="date" id="fromDate" />
+                <input type="date" id="fromDate" min={new Date().toISOString().slice(0, -14)} onChange={(e) => setFromDate(e.target.value)} />
                 <label htmlFor="toDate">Data Fim</label>
-                <input type="date" id="toDate" />
+                <input type="date" id="toDate" min={fromDate} />
             </div>
 
             <button style={{ marginTop: '1rem' }} type="submit">
@@ -33,15 +35,15 @@ export function PaymentForm() {
                 <div></div>
             </div>
             <div className={styles['other-payment-methods-container']}>
-                <button className={styles['google-button']}>
+                <button type="button" className={styles['google-button']}>
                     <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" />
                     Pay
                 </button>
-                <button className={styles['paypal-button']}>
+                <button type="button" className={styles['paypal-button']}>
                     <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" />
                     PayPal
                 </button>
-                <button className={styles['shoppay-button']}>
+                <button type="button" className={styles['shoppay-button']}>
                     <img src="https://princesspolly.co.uk/cdn/shop/files/shop-pay-logo-hero.png?v=3297951745771199121" />
                 </button>
             </div>
