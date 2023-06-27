@@ -12,6 +12,8 @@ import { PaymentConfirmed } from './pages/Confirme'
 const PrivateOutlet: FC = ({ children }: any) => {
     const { isAuthenticated } = useContext(AuthContext)
 
+    console.log(isAuthenticated)
+
     return isAuthenticated ? (
         <>
             {children}
@@ -41,13 +43,15 @@ export const AppRoutes = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route element={<PrivateOutlet />}></Route>
+                <Route path={'/'} element={<PrivateOutlet />}>
+                    <Route path={'pagamento-confirmado'} element={<PaymentConfirmed />} />
+                    <Route path="pagamento" element={<Payment />} />
+                    <Route path="pagamento?imovelId=:imovelId" element={<Payment />} />
+                    <Route path={'imoveis'} element={<Property />} />
+                </Route>
 
                 <Route path={'/'} element={<AppLayout />}>
                     <Route index element={<Home />} />
-                    <Route path={'pagamento-confirmado'} element={<PaymentConfirmed />} />
-                    <Route path="pagamento" element={<Payment />} />
-                    <Route path={'imoveis'} element={<Property />} />
                 </Route>
 
                 <Route path={'auth'} element={<AuthLayout />}>

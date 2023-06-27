@@ -7,7 +7,7 @@ interface PropertyDetailProps {
 export function PropertyDetail({ property }: PropertyDetailProps) {
     return (
         <aside className={styles['property-details-container']}>
-            <img src={property.imageUrl} />
+            <img src={property.imageUrl} alt={property.title} title={property.title} />
             <div className={styles['property-content']}>
                 <h4>Nome: {property.title}</h4>
                 <p>

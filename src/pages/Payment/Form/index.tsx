@@ -5,7 +5,7 @@ export function PaymentForm() {
     const [fromDate, setFromDate] = useState(new Date().toISOString().slice(0, -14))
     return (
         <form className={styles['payment-form-container']}>
-            <h1>Informações de Pagamento</h1>
+            <h3>Informações de Pagamento</h3>
 
             <div className={styles['multiple-input']}>
                 <input placeholder="Primeiro Nome" />
@@ -36,15 +36,15 @@ export function PaymentForm() {
             </div>
             <div className={styles['other-payment-methods-container']}>
                 <button type="button" className={styles['google-button']}>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt={''} />
                     Pay
                 </button>
                 <button type="button" className={styles['paypal-button']}>
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" alt={''} />
                     PayPal
                 </button>
                 <button type="button" className={styles['shoppay-button']}>
-                    <img src="https://princesspolly.co.uk/cdn/shop/files/shop-pay-logo-hero.png?v=3297951745771199121" />
+                    <img src="https://princesspolly.co.uk/cdn/shop/files/shop-pay-logo-hero.png?v=3297951745771199121" alt={''} />
                 </button>
             </div>
         </form>
