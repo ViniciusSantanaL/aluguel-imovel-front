@@ -4,14 +4,25 @@ export function PaymentForm() {
     return (
         <form className={styles['payment-form-container']}>
             <h1>Informações de Pagamento</h1>
-            <input placeholder="Nome Completo" />
+
+            <div className={styles['multiple-input']}>
+                <input placeholder="Primeiro Nome" />
+                <input placeholder="Sobrenome" />
+            </div>
             <input placeholder="CPF" />
             <input placeholder="Endereço" />
-            <div>
-                <input placeholder="Endereço" />
-                <input placeholder="Endereço" />
+            <div className={styles['multiple-input']}>
+                <input placeholder="Cidade" />
+                <input placeholder="Estado" />
+                <input placeholder="CEP" />
             </div>
-            <input placeholder="Valor" />
+            <input placeholder="Contato" />
+            <div className={styles['date-input-container']}>
+                <label htmlFor="fromDate">Data Inicio </label>
+                <input type="date" id="fromDate" />
+                <label htmlFor="toDate">Data Fim</label>
+                <input type="date" id="toDate" />
+            </div>
 
             <button style={{ marginTop: '1rem' }} type="submit">
                 Confirmar
@@ -21,7 +32,7 @@ export function PaymentForm() {
                 <p>OU</p>
                 <div></div>
             </div>
-            <div>
+            <div className={styles['other-payment-methods-container']}>
                 <button className={styles['google-button']}>
                     <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" />
                     Pay
