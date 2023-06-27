@@ -1,9 +1,48 @@
+import { Link, useNavigate } from 'react-router-dom'
+
 import cardStyle from '../Card/styles.module.scss'
-import styles from './sytles.module.scss'
+import * as Yup from 'yup'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { ContactType } from '../../../types'
+import { toast } from 'react-toastify'
 import { TextInput } from '../../../components'
-import { Link } from 'react-router-dom'
+import { Api } from '../../../services'
+
+const contactSchema = Yup.object({
+    email: Yup.string().email().trim().min(6).required(),
+    name: Yup.string().trim().min(3).required(),
+    subject: Yup.string().trim().min(3).required(),
+    content: Yup.string().min(10).required()
+}).required()
 
 export function Contact() {
+    const navigate = useNavigate()
+
+    const {
+        register,
+        handleSubmit,
+        formState: { isSubmitting, errors, isValid },
+        reset
+    } = useForm<ContactType>({
+        mode: 'onTouched',
+        resolver: yupResolver(contactSchema)
+    })
+
+    const onSubmit = async (contact: ContactType) => {
+        const result = await Api.post('contact-emails', contact)
+
+        if (result.status !== 201) {
+            toast.error('Occorreu um erro, tenta novamente.')
+
+            return
+        }
+
+        toast.success('Email successfully sent.')
+        reset()
+        navigate('/')
+    }
+
     return (
         <section className={cardStyle['cards-container']} id="contact">
             <div className={cardStyle['cards-content']}>
@@ -39,27 +78,38 @@ export function Contact() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-9">
+                    <div className="col-lg-9" onSubmit={handleSubmit(onSubmit)}>
                         <form className="row contact_form" action="" method="post" id="contactForm">
                             <div className="col-md-6">
                                 <div className="form-group">
-                                    <input type="text" className="form-control" id="name" name="name" required placeholder="Nome completo" />
+                                    <TextInput name={'name'} type={'text'} placeholder={'Nome completo'} register={register} error={errors.name && errors.name.message} valid={isValid} />
                                 </div>
                                 <div className="form-group">
-                                    <input type="email" className="form-control" id="email" name="email" required placeholder="E-mail" />
+                                    <TextInput name={'email'} type={'email'} placeholder={'Email'} register={register} error={errors.email && errors.email.message} valid={isValid} />
                                 </div>
                                 <div className="form-group">
-                                    <input type="text" className="form-control" id="subject" name="subject" required placeholder="Assunto" />
+                                    <TextInput name={'subject'} type={'text'} placeholder={'Assunto'} register={register} error={errors.subject && errors.subject.message} valid={isValid} />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="form-group">
-                                    <textarea className="form-control" name="message" id="message" rows="5" required placeholder="Conteudo"></textarea>
+                                    <textarea
+                                        className={`form-control ${isValid && 'is-valid'} ${errors.content && errors.content.message && 'is-invalid'}`}
+                                        id="content"
+                                        {...register('content')}
+                                        rows={5}
+                                        placeholder="Conteudo"
+                                    ></textarea>
+                                    {errors.content && errors.content.message && (
+                                        <div id="message-error-feedbac" className="invalid-feedback">
+                                            {errors.content.message}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                             <div className="col-md-12">
-                                <button type="submit" value="submit" className="primary_btn">
-                                    <span>Enviar</span>
+                                <button type="submit" value="submit" disabled={isSubmitting} className="primary_btn">
+                                    {isSubmitting ? <span className="spinner-border spinner-border-sm mr-1"></span> : 'Enviar'}
                                 </button>
                             </div>
                         </form>
