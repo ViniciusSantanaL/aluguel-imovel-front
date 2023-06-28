@@ -15,6 +15,23 @@ services:
             - "8000:5173"
         networks:
             - dev
+                
+    json-server:
+        image: node:lts-alpine
+        container_name: aluguel_json_server
+        volumes:
+            - ./:/var/www/app
+        working_dir: /var/www/app
+        command: >
+            sh -c "npm install
+            && npm run json-server"
+        depends_on:
+            - node
+        ports:
+            - "3000:3000"
+            - "8001:3000"
+        networks:
+            - dev
 
 networks:
     dev:
