@@ -1,29 +1,48 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import styles from './styles.module.scss'
+import { useForm } from 'react-hook-form'
+import { Api } from '../../../services'
+import { Property } from '../../../types/Property.type'
+import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../../context'
 
-export function PaymentForm() {
+interface PaymentFormProps {
+    property: Property
+}
+export function PaymentForm({ property }: PaymentFormProps) {
+    const { user } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const { register, handleSubmit } = useForm<any>({
+        mode: 'onTouched'
+        //resolver: yupResolver(contactSchema)
+    })
     const [fromDate, setFromDate] = useState(new Date().toISOString().slice(0, -14))
+
+    const onSubmit = async (data: any) => {
+        await Api.post('/imoveis', { ...data, userId: user?.user?.id, property })
+        navigate('/pagamento-confirmado')
+    }
     return (
-        <form className={styles['payment-form-container']}>
+        <form className={styles['payment-form-container']} onSubmit={handleSubmit(onSubmit)}>
             <h3>Informações de Pagamento</h3>
 
             <div className={styles['multiple-input']}>
-                <input placeholder="Primeiro Nome" />
-                <input placeholder="Sobrenome" />
+                <input placeholder="Primeiro Nome" {...register('userFirstName')} />
+                <input placeholder="Sobrenome" {...register('userLastName')} />
             </div>
-            <input placeholder="CPF" />
-            <input placeholder="Endereço" />
+            <input placeholder="CPF" {...register('userDocument')} />
+            <input placeholder="Endereço" {...register('userAddress')} />
             <div className={styles['multiple-input']}>
-                <input placeholder="Cidade" />
-                <input placeholder="Estado" />
-                <input placeholder="CEP" />
+                <input placeholder="Cidade" {...register('userCity')} />
+                <input placeholder="Estado" {...register('userState')} />
+                <input placeholder="CEP" {...register('userZipCode')} />
             </div>
-            <input placeholder="Contato" />
+            <input placeholder="Contato" {...register('userContact')} />
             <div className={styles['date-input-container']}>
                 <label htmlFor="fromDate">Data Inicio </label>
-                <input type="date" id="fromDate" min={new Date().toISOString().slice(0, -14)} onChange={(e) => setFromDate(e.target.value)} />
+                <input type="date" id="fromDate" {...register('userPropertyFromDate')} min={new Date().toISOString().slice(0, -14)} onChange={(e) => setFromDate(e.target.value)} />
                 <label htmlFor="toDate">Data Fim</label>
-                <input type="date" id="toDate" min={fromDate} />
+                <input type="date" id="toDate" {...register('userPropertyToDate')} min={fromDate} />
             </div>
 
             <button style={{ marginTop: '1rem' }} type="submit">

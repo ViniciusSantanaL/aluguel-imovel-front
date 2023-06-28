@@ -1,22 +1,38 @@
 {
   "users": [
     {
-      "email": "rafiou@domain.com.br",
-      "password": "$2a$10$CJoaQCOa/qbxsuGIUxdr3OxVlgWni0S3WHuOjX38LaA7tHFy70E8O",
-      "username": "rafiou",
-      "firstName": "Rafiou",
-      "lastName": "Sitou",
+      "email": "teste@gmail.com",
+      "password": "$2a$10$Xk891TONDyZYXyhRy7vMoeFTkJg8S0MjL3M1sUbN9gcMplWUHVCzi",
+      "username": "Vinicius",
+      "firstName": "VInicius",
+      "lastName": "SIlva",
       "id": 1
-    },
-    {
-      "email": "rafiou_1@domain.com.br",
-      "password": "$2a$10$NHdltv.3hOpzvEEHyq3.CO6F6VxC/0ZESQZroBWuI5gulx314cxkG",
-      "username": "rafiou_1",
-      "firstName": "Rafiou",
-      "lastName": "Sitou",
-      "id": 2
     }
   ],
-  "contact-emails": [
+  "contact-emails": [],
+  "imoveis": [
+    {
+      "userFirstName": "dasdsada",
+      "userLastName": "asdasfdsfds",
+      "userDocument": "dfdsfsdfsd",
+      "userAddress": "sddsfsd",
+      "userCity": "sdfsdfs",
+      "userState": "sdfsdfsd",
+      "userZipCode": "sdfsdf",
+      "userContact": "sdfdsfsd",
+      "userPropertyFromDate": "2023-06-28",
+      "userPropertyToDate": "2023-06-30",
+      "userId": 1,
+      "property": {
+        "id": 1,
+        "imageUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-22319550/original/cc1fd71d-1a91-4026-99f8-c2cbffefd68f.jpeg?im_w=720",
+        "price": 560000.3,
+        "locale": "Paraty, Brasil",
+        "title": "Casa de design em floresta tropical com cachoeira privativa",
+        "description": "Lindíssimo apartamento 3 quartos Shces 305 Cruzeiro novo, vazado, nascente, 1° andar !",
+        "assessment": 4.5
+      },
+      "id": 1
+    }
   ]
 }

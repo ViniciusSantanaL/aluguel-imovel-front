@@ -2,11 +2,16 @@ import { Header } from '../../components/Header'
 import { PropertyCard } from './Card'
 import styles from './styles.module.scss'
 import properties from '../../data/properrty.json'
-import { useCallback, useState } from 'react'
+import { useCallback, useContext, useEffect, useState } from 'react'
 import { TableControl } from './TableControl'
+import { Property } from '../../types/Property.type'
+import { Api } from '../../services'
+import { AuthContext } from '../../context'
 
 export function Property() {
+    const { user } = useContext(AuthContext)
     const [currentPage, setCurrentPage] = useState(1)
+    const [propertiesData, setProperties] = useState<Property[]>([])
     const [propertyName, setPropertyName] = useState('')
     const [cheapest, setCheapest] = useState(false)
     const [greaterAssessment, setGreaterAssessment] = useState(false)
@@ -20,6 +25,7 @@ export function Property() {
 
     const data = properties
         .filter((item) => propertyName === '' || item.title.includes(propertyName.trim()))
+        .filter((item) => !propertiesData.filter((a) => item.id === a.id).pop())
         .sort((a, b) => (cheapest ? a.price - b.price : 0))
         .sort((a, b) => (greaterAssessment ? b.assessment - a.assessment : 0))
         .slice(firstIndex, lastIndex)
@@ -37,7 +43,14 @@ export function Property() {
             setCurrentPage(currentPage + 1)
         }
     }, [currentPage, lastIndex])
-
+    const getImoveis = async () => {
+        const { data } = await Api.get(`/imoveis?userId=${user?.user?.id}`)
+        const test = data.map((item: any) => item.property)
+        setProperties(test)
+    }
+    useEffect(() => {
+        getImoveis()
+    }, [])
     return (
         <>
             <Header />

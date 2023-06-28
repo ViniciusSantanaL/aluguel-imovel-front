@@ -8,6 +8,7 @@ import { AuthContext } from './context'
 import { Property } from './pages/Property'
 import { Payment } from './pages/Payment'
 import { PaymentConfirmed } from './pages/Confirme'
+import { MyProperties } from './pages/MyProperties'
 
 const PrivateOutlet: FC = ({ children }: any) => {
     const { isAuthenticated } = useContext(AuthContext)
@@ -45,6 +46,7 @@ export const AppRoutes = () => {
             <Routes>
                 <Route path={'/'} element={<PrivateOutlet />}>
                     <Route path={'pagamento-confirmado'} element={<PaymentConfirmed />} />
+                    <Route path={'alugados'} element={<MyProperties />} />
                     <Route path="pagamento" element={<Payment />} />
                     <Route path="pagamento?imovelId=:imovelId" element={<Payment />} />
                     <Route path={'imoveis'} element={<Property />} />

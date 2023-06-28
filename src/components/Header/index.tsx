@@ -14,6 +14,7 @@ export function Header() {
                 </Link>
                 <nav className={styles['nav-container']}>
                     <Link to={'/'}>Inicial</Link>
+                    {isAuthenticated && <Link to={'/alugados'}>Alugados</Link>}
                     {!isAuthenticated ? (
                         <>
                             <Link to={'auth/login'}>Login</Link>

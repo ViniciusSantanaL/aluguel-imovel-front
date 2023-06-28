@@ -23,7 +23,7 @@ export function Payment() {
             </div>
             <main className={styles['payment-container']}>
                 <PropertyDetail property={property} />
-                <PaymentForm />
+                <PaymentForm property={property} />
             </main>
         </>
     )
